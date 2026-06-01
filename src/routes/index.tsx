@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Trophy, Zap, Code2, Target, Sparkles, ArrowRight, Github, Twitter } from "lucide-react";
+import { Trophy, Zap, Code2, Target, Sparkles, ArrowRight, Github, Twitter, ShieldCheck } from "lucide-react";
+import { usePaylock } from "@/hooks/use-paylock";
+import { getPaylockApiKey } from "@/lib/paylock-config";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,6 +23,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Landing() {
+  const { status } = usePaylock(getPaylockApiKey());
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
@@ -30,7 +33,32 @@ function Landing() {
       <HowItWorks />
       <Pricing />
       <CTA />
+      <PaylockStatus status={status} />
       <Footer />
+    </div>
+  );
+}
+
+function PaylockStatus({ status }: { status: string }) {
+  const label =
+    status === "ready"
+      ? "Paylock connected"
+      : status === "loading"
+        ? "Connecting to Paylock…"
+        : status === "invalid"
+          ? "Paylock unavailable"
+          : "Paylock idle";
+  const dot =
+    status === "ready"
+      ? "bg-primary"
+      : status === "invalid"
+        ? "bg-destructive"
+        : "bg-muted-foreground";
+  return (
+    <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-xs text-muted-foreground shadow-card backdrop-blur">
+      <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+      <span className={`h-1.5 w-1.5 rounded-full ${dot}`} />
+      {label}
     </div>
   );
 }
