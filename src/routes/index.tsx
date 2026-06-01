@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Trophy, Zap, Code2, Target, Sparkles, ArrowRight, Github, Twitter, ShieldCheck } from "lucide-react";
 import { usePaylock } from "@/hooks/use-paylock";
-import { getPaylockApiKey } from "@/lib/paylock-config";
+import { PAYLOCK_CONFIG } from "@/lib/paylock-config";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Landing() {
-  const { status } = usePaylock(getPaylockApiKey());
+  const { status } = usePaylock(PAYLOCK_CONFIG);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />

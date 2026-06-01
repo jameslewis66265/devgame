@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { initPaylock, type PaylockState } from "@/lib/paylock";
+import { initPaylock, type PaylockBootstrapOptions, type PaylockState } from "@/lib/paylock";
 
 type Status = "idle" | "loading" | "ready" | "invalid";
 
-export function usePaylock(apiKey: string | undefined) {
+export function usePaylock(opts: PaylockBootstrapOptions | null | undefined) {
   const [status, setStatus] = useState<Status>("idle");
   const [state, setState] = useState<PaylockState | null>(null);
   const [error, setError] = useState<unknown>(null);
 
   useEffect(() => {
-    if (!apiKey) return;
+    if (!opts?.projectId || !opts.projectSecret) return;
     setStatus("loading");
-    initPaylock(apiKey)
+    initPaylock(opts)
       .then((data) => {
         setState(data);
         setStatus("ready");
@@ -20,7 +20,7 @@ export function usePaylock(apiKey: string | undefined) {
         setError(err);
         setStatus("invalid");
       });
-  }, [apiKey]);
+  }, [opts?.projectId, opts?.projectSecret, opts?.licenseKey, opts?.invalidBehavior]);
 
   return { status, state, error };
 }
