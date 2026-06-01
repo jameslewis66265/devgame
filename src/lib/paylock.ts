@@ -6,14 +6,24 @@ export type PaylockState = {
   [key: string]: unknown;
 };
 
+export type PaylockBootstrapOptions = {
+  projectId: string;
+  projectSecret: string;
+  licenseKey?: string;
+  invalidBehavior?: "modal" | "redirect" | "soft";
+};
+
 let bootstrapPromise: Promise<PaylockState> | null = null;
 
-export function initPaylock(apiKey: string): Promise<PaylockState> {
+export function initPaylock(opts: PaylockBootstrapOptions): Promise<PaylockState> {
   if (bootstrapPromise) return bootstrapPromise;
 
   bootstrapPromise = new Promise((resolve, reject) => {
     Paylock.bootstrap({
-      apiKey,
+      projectId: opts.projectId,
+      projectSecret: opts.projectSecret,
+      licenseKey: opts.licenseKey,
+      invalidBehavior: opts.invalidBehavior ?? "modal",
       onReady: (data: PaylockState) => resolve(data),
       onInvalid: (error: unknown) => reject(error),
     });
