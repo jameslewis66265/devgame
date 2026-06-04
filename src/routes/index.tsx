@@ -135,8 +135,8 @@ function Hero() {
 function HeroPreview() {
  return (
  <div className="relative mx-auto mt-20 max-w-4xl">
- <div className="rounded-2xl border border-border bg-card/80 p-2 shadow-card backdrop-blur">
- <div className="rounded-xl bg-background/80 p-6 font-mono text-sm">
+ <div className="border border-border bg-card/80 p-2 shadow-card backdrop-blur">
+ <div className="bg-background/80 p-6 font-mono text-sm">
  <div className="mb-4 flex items-center gap-2">
  <span className="h-2.5 w-2.5 bg-destructive/70" />
  <span className="h-2.5 w-2.5 bg-chart-4/70" />
@@ -149,7 +149,7 @@ function HeroPreview() {
  { name: "@linus", xp: 4310, rank: 2 },
  { name: "@grace", xp: 3990, rank: 3 },
  ].map((p) => (
- <div key={p.name} className="rounded-lg border border-border bg-card p-4">
+ <div key={p.name} className="border border-border bg-card p-4">
  <div className="flex items-center justify-between text-xs text-muted-foreground">
  <span>#{p.rank}</span>
  <Trophy className="h-3.5 w-3.5 text-primary" />
@@ -311,7 +311,7 @@ function Pricing() {
  {tiers.map((t) => (
  <div
  key={t.name}
- className={`rounded-2xl border p-8 ${
+ className={`border p-8 ${
  t.featured
  ? "border-primary/60 bg-card shadow-glow"
  : "border-border bg-card"
@@ -320,7 +320,7 @@ function Pricing() {
  <div className="flex items-baseline justify-between">
  <h3 className="text-lg font-semibold">{t.name}</h3>
  {t.featured && (
- <span className="rounded-full bg-gradient-primary px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary-foreground">
+ <span className="bg-gradient-primary px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary-foreground">
  Popular
  </span>
  )}
@@ -378,7 +378,7 @@ function CTA() {
  />
  <button
  type="submit"
- className="rounded-md bg-gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-105"
+ className="bg-gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-105"
  >
  Get started
  </button>
