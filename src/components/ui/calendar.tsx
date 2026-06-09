@@ -85,17 +85,17 @@ function Calendar({
  "text-muted-foreground select-none text-[0.8rem]",
  defaultClassNames.week_number,
  ),
- day: cn(
- "group/day relative aspect-square h-full w-full select-none p-0 text-center
- defaultClassNames.day,
- ),
- range_start: cn("bg-accent-md", defaultClassNames.range_start),
- range_middle: defaultClassNames.range_middle),
- range_end: cn("bg-accent-md", defaultClassNames.range_end),
- today: cn(
- "bg-accent text-accent-foreground
- defaultClassNames.today,
- ),
+  day: cn(
+  "group/day relative aspect-square h-full w-full select-none p-0 text-center",
+  defaultClassNames.day,
+  ),
+  range_start: cn("bg-accent", defaultClassNames.range_start),
+  range_middle: defaultClassNames.range_middle,
+  range_end: cn("bg-accent", defaultClassNames.range_end),
+  today: cn(
+  "bg-accent text-accent-foreground",
+  defaultClassNames.today,
+  ),
  outside: cn(
  "text-muted-foreground aria-selected:text-muted-foreground",
  defaultClassNames.outside,
