@@ -6,7 +6,7 @@
       "name": "tanstack_start_ts",
       "dependencies": {
         "@hookform/resolvers": "^5.2.2",
-        "@paylock/js": "^1.0.5",
+        "@paylock/js": "^1.0.7",
         "@radix-ui/react-accordion": "^1.2.12",
         "@radix-ui/react-alert-dialog": "^1.1.15",
         "@radix-ui/react-aspect-ratio": "^1.1.8",
@@ -259,7 +259,7 @@
 
     "@oxc-project/types": ["@oxc-project/types@0.134.0", "https://europe-west1-npm.pkg.dev/lovable-core-prod/sandbox-npm-cache/@oxc-project/types/-/types-0.134.0.tgz", {}, "sha512-T0xuRRKrQFmocH8y+jGfpmSkGcheaJExY9lEihmR1Gm2aH+75B8CzgU2rABRQSzzDxLjZ15Sc0bRVLj5lVeNXQ=="],
 
-    "@paylock/js": ["@paylock/js@1.0.5", "https://europe-west1-npm.pkg.dev/lovable-core-prod/sandbox-npm-cache/@paylock/js/-/js-1.0.5.tgz", {}, "sha512-zTfr6oSoq3XzQjeQWJnEWYtPfTwgE1T/tSPr86JCYyUB+r2YrfVSZamUfTA9J7Y9mQQvf1WNfTFgR7DU+qieCw=="],
+    "@paylock/js": ["@paylock/js@1.0.7", "https://europe-west1-npm.pkg.dev/lovable-core-prod/sandbox-npm-cache/@paylock/js/-/js-1.0.7.tgz", {}, "sha512-BoCr3822wYQyIFAuj/4maOzYk+x55dY18eCBKXptKqcjCmmBurBEycYH56XDk/jC/57xmaPQx8tNOIgawvLjmg=="],
 
     "@pkgr/core": ["@pkgr/core@0.2.9", "", {}, "sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA=="],
 
